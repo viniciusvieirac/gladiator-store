@@ -34,7 +34,6 @@ describe('POST /products', function () {
     });
   })
   it('correct body should return 201', async function () {
-   
     const hostInstance = ProductModel.build(productsMock.validBody);
     sinon.stub(ProductModel, 'create').resolves(hostInstance);
     const httpResponse = await chai.request(app).post('/products').send(productsMock.validBody);
